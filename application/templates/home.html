@@ -1,6 +1,16 @@
 {%  extends "layout.html"  %}
 {%  block body_content  %}
 
+<a href="{{ url_for('about') }}">About</a>
+   {% for post in posts %}
+        <div>
+            <h3>{{ post.title }}</h3>
+            <p><b> - First name:</b>{{ post.name.first }}</p>
+            <p><b> - Last name:</b>{{ post.name.last }}</p>
+            <p> -- {{ post.content }}</p>
+        </div>
+    {% endfor %}
+
 	<h1>Home Page</h1>
 	<p>Welcome to this web app!</p>
 		<div>
