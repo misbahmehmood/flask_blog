@@ -1,14 +1,24 @@
 <html>
-	
+	<head>	
+		<title>{{ title }}</title>
+	</head>
 	<body>
 	
+		<div>
+		<nav>
+		{% if current_user.is_authenticated %}
 
-		<div class=navbar>
+			<a href="{{ url_for('home') }}">Home</a>
+			<a href="{{ url_for('about') }}">About</a>
+			<a href="{{ url_for('logout') }}">Logout</a>
+			<a href="{{ url_for('post') }}">Post</a>
+		{% else %}
 			<a href="{{ url_for('home') }}">Home</a>
 			<a href="{{ url_for('about') }}">About</a>
 			<a href="{{ url_for('login') }}">Login</a>
 			<a href="{{ url_for('register') }}">Register</a>
-			<a href="{{ url_for('post') }}">Post</a>
+		{% endif %}
+		</nav>
 		</div>
 
 		{% block body_content %}{% endblock %}
