@@ -12,7 +12,7 @@ app.config['SECRET_KEY'] = getenv('SECRET_KEY')
 db=SQLAlchemy(app)
 
 
-brcrypt=Bcrypt(app)
+bcrypt=Bcrypt(app)
 login_manager = LoginManager(app)
 login_manager.login_view = 'login'
 
